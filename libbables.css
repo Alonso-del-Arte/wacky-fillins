@@ -1,0 +1,16 @@
+#libbable { display: none }
+#libbable, #libbableShow, #libbableDraft { margin-bottom: 5em }
+#libbableShow p, #libbableDraft p { font-size: 24pt; text-indent: 1.5em; margin-top: 0; margin-bottom: 0; text-align: justify }
+ruby { text-decoration: underline }
+rt { text-decoration: none }
+span.label { font-family: sans-serif; margin-right: 1em }
+.labelInputGroup { margin-top: 1em; margin-bottom: 1em }
+
+/* For drafting wacky fill-ins */
+span.fillable, span.repeatFill { color: white; border: 3px solid }
+span.fillable { background-color: black; border-color: gray}
+span.repeatFill { background-color: gray; border-color: black }
+
+@media only screen and (min-width: 600px) {
+    body { margin-left: 25%; margin-right: 25% }
+}
