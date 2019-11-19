@@ -5,11 +5,11 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="description" content="Wacky Fill-Ins template"/>
-  <link rel="stylesheet" href="wizard.css" />
+  <link rel="stylesheet" href="stylesheet.css" />
   
-  <script defer src="/select-box.js"></script>
-  <script defer src="/wordbank.js"></script>
-  <script defer src="/wizard.js"></script>
+  <script defer src="/components/select-box.js"></script>
+  <script defer src="/wizard/wordbank.js"></script>
+  <script defer src="/wizard/app.js"></script>
 
   <title>Wacky Fill-In Wizard</title>
 </head>
@@ -17,19 +17,23 @@
 <body>
   <div id="container">
     <form id="storycard" name="story" class="card">
-      <input name="title" type="text" placeholder="Title"/>
-      <textarea name="content" 
+      <label for="title" hidden aria-hidden="false">Story Title</label>
+      <input id="title" name="title" type="text" placeholder="Title"/>
+
+      <label for="content" hidden aria-hidden="false">Type your story here</label>
+      <textarea id="content" name="content"
         placeholder="You can begin typing a story full of wacky fill-ins here. To denote a word that needs to be replaced by a wacky fill-in, surround that word with curly brackets. For example: { hero } was going for a walk, but { heroSubjectivePronoun } forgot { heroPossessivePronoun } { thingToForget }. Silly { animal }, { thingToForget_plural } are for { targetAudience }!"></textarea>
       <input name="content-submit" type="submit" style="display: none;"/>
     </form>
   
     <form id="wordbank" class="card">
-      <h2>wordbank</h2>
+      <h2>Wacky Fill-Ins</h2>
+
       <section id="variables">
 
       </section>
       
-      <button name="wordbank-submit" type="submit" class="chip gray seethrough">
+      <button id="wordbank-submit" name="wordbank-submit" type="submit" class="chip gray darker-text">
         create
       </button>
     </form>

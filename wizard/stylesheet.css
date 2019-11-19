@@ -5,13 +5,12 @@
   font-family: "Roboto";
 }
 
-body { margin: 0px }
-
-h1, h2, h3, h4, h5, h6, p { font-family: Roboto }
+body { margin: 0 }
 
 h2 {
   font-size: 1.25rem;
   color: rgba( 22, 22, 22, 0.5 );
+  margin: 5px;
 }
 
 input, textarea {
@@ -28,38 +27,16 @@ button {
   font-size: 1rem;
 }
 
-form[name=story] {
-  height: calc( 100% - 50px );
-}
-
-[name=title] {
-  width: 100%; 
-  font-size: 2rem;
-  color: rgba( 22, 22, 22, 0.8 );
-}
-
-[name=title]:focus {
-  outline: none;
-}
-
-[name=content] {
-  margin-top: 15px;
-  width: 100%;
-  font-size: 1.25rem;
-  height: 100%;
-  resize: none;
-}
-
 
 #container {
   background-color: #fff;
   padding: 15px;
-  min-height: 100vh;
+  height: 100vh;
 
   display: grid;
   grid-gap: 15px;
   grid-template-columns: 1fr;
-  grid-template-rows: 2fr 1fr;
+  grid-template-rows: minmax( 300px, 2fr ) minmax( 100px, 1fr );
   grid-template-areas:
     "storycard"
     "wordbank";
@@ -81,10 +58,23 @@ form[name=story] {
 #wordbank {
   grid-area: wordbank;
   height: 100%;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#wordbank-submit {
 }
 
 #variables {
-  display: flex; flex-flow: row wrap;
+  display: flex;
+  flex-flow: row wrap;
+
+  width: 100%;
+
+  overflow-x: scroll;
 }
 
 #variables > * {
@@ -105,12 +95,6 @@ form[name=story] {
   border-radius: 15px;
 }
 
-.subcategory {
-  margin-top: -0.5rem;
-  margin-bottom: 0.5rem;
-  color: rgba( 22, 22, 22, 0.5 );
-}
-
 .danger {
   background-color: #FF4A25;
 }
@@ -127,10 +111,33 @@ form[name=story] {
   background-color: #F0F0F0;
 }
 
-.seethrough {
+.darker-text {
   color: rgba( 0, 0, 0, 0.5 );
 }
 
-.white-text {
+.light-text {
   color: #fafafa;
+}
+
+
+form[name=story] {
+  height: calc( 100% - 50px );
+}
+
+[name=title] {
+  width: 100%;
+  font-size: 2rem;
+  color: rgba( 22, 22, 22, 0.8 );
+}
+
+[name=title]:focus {
+  outline: none;
+}
+
+[name=content] {
+  margin-top: 15px;
+  width: 100%;
+  font-size: 1.25rem;
+  height: 100%;
+  resize: none;
 }
