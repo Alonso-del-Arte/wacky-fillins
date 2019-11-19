@@ -1,0 +1,15 @@
+@page :left { margin-left: 2in }
+@page :right { margin-right: 2in }
+p { text-align: justify }
+a[href]:after { content: " (" attr(href) ")" }
+#libbable, #libbableShow, #libbableDraft { margin-bottom: 5em }
+#libbableShow p, #libbableDraft p { font-size: 24pt; text-indent: 1.5em; line-height: 2.0; margin-top: 0; margin-bottom: 0; text-align: justify }
+ruby { text-decoration: underline }
+rt { text-decoration: none }
+span.label { font-family: sans-serif; margin-right: 1em }
+.labelInputGroup { margin-top: 1em; margin-bottom: 1em }
+
+/* For drafting wacky fill-ins */
+span.fillable, span.repeatFill { border-width: 3px }
+span.fillable { border-style: solid }
+span.repeatFill { border-style: dashed }

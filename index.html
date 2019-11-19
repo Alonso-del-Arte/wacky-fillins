@@ -1,18 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Wacky Fill-Ins: Sample #1</title>
+        <title>Wacky Fill-Ins</title>
         <meta charset="utf-8" />
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="An explanation of how you can write your own Wacky Fill-Ins" />
-        <link rel="stylesheet" href="libbables.css" />
+        <meta name="description" content="An explanation of how you can write your own Wacky Fill-Ins. Includes samples and a template." />
+        <meta name="author" content="Alonso del Arte" />
+        <link rel="stylesheet" media="screen, projection" href="libbables.css" />
+        <link rel="stylesheet" media="print" href="libprint.css" />
+        <style><!-- 
+            li { font-size: 16pt }
+        // --></style>
     </head>
     <body>
         <h1>Wacky Fill-Ins</h1>
         <h2>The Basic Idea</h2>
-        <p>Basically, you have an incomplete story with blanks, and you can fill in those blanks to create a finished story that might not make much sense narratively but is unexpectedly hillarious. See <code>README.md</code> for a more detailed explanation of the basic idea.</p>
+        <p>Basically, you have an incomplete story with blanks, and you can fill in those blanks to create a finished story that might not make much sense narratively, but will hopefully be unexpectedly hillarious. See <code>README.md</code> for a more detailed explanation of the concept.</p>
+        <h2>Try It Out</h2>
+        <p>I have included three samples to demonstrate the concept:</p>
+        <ol>
+            <li><a href="sample1.html">Running Into an Old Acquaintance</a> &mdash; A famous woman runs into an old friend</li>
+            <li><a href="sample2.html">Interstellar Hijinks</a> &mdash; A transmission from a nebula could be trouble for Earth's moon</li>
+            <li><a href="sample3.html">Artist Statement</a> &mdash; Artwork by John K. Ford questions the boundaries of elusiveness</li>
+        </ol>
         <h2>How to Write Your Own Wacky Fill-Ins</h2>
-        <p>You don't have to know JavaScript to write your own Wacky Fill-Ins, but it really helps to know HTML, and, to a lesser extent, CSS. You can use any of the three sample files (<a href="sample1.html">sample1.html</a>, <a href="sample2.html">sample2.html</a>, <a href="sample3.html">sample3.html</a>) as a template.</p>
+        <p>You don't have to know JavaScript to write your own Wacky Fill-Ins, but it really helps to know HTML, and, to a lesser extent, CSS. You can use the <a href="template.html">provided template</a> to get started.</p>
+        <p>My friend Cole suggested a creation wizard that would enable some&shy;one to write a Wacky Fill-In story without needing to know any HTML markup at all. One would only need a rudimentary and self-ex&shy;plan&shy;a&shy;to&shy;ry markdown.</p>
+        <p>The story goes inside a <code>div</code> tag with <code>id="libbable"</code>. However, you might find it helpful to use <code>id="libbableDraft"</code> when you're drafting your story. Inside the <code>div</code>, you will use <code>p</code> tags to make paragraphs.</p>
+        <p>To indicate a blank that needs to be filled in, use a <code>span</code> tag with <code>class="fillable"</code>. Be sure to also give the <code>span</code> an <code>id</code> if you want to reuse the fill-in later in the story. In between the opening and closing of the <code>span</code> tag, write the de&shy;scrip&shy;tion of what needs to be filled in, e.g., "verb", "communications device".</p>
+        <p>To repeat a previous fill-in, use a <code>span</code> tag with <code>class="repeatFill"</code>. Write the <code>id</code> of the field you want to repeat in between the opening and closing for the <code>span</code> tag that is to have the repeated fill-in. For example:</p>
+        <p><code>&lt;p&gt;Little &lt;span id="firstName" class="fillable"&gt;first name&lt;/span&gt; the &lt;span id="animalSpecies" class="fillable"&gt;animal species, cap&shy;i&shy;tal&shy;ized&lt;/span&gt; was walking down &lt;span class="fillable"&gt;street&lt;/span&gt;. Little &lt;span class="repeatFill"&gt;firstName&lt;/span&gt; the &lt;span class="repeatFill"&gt;animalSpecies&lt;/span&gt; enjoyed &lt;span class="fillable"&gt;activity, gerund&lt;/span&gt; from time to time.&lt;/p&gt;</code></p>
+        <p>If you preview that in your Web browser (with the <code>libbableDraft</code> styles), it should look something like this:</p>
+        <div id="libbableDraft" style="margin-bottom: 0">
+            <p>Little <span id="firstName" class="fillable">first name</span> the <span id="animalSpecies" class="fillable">animal species, cap&shy;i&shy;tal&shy;ized</span> was walking down <span class="fillable">street</span>. Little <span class="repeatFill">firstName</span> the <span class="repeatFill">animalSpecies</span> enjoyed <span class="fillable">activity, gerund</span> from time to time.</p>
+        </div>
+        <p>Once you're satisfied with your story and its blanks, it's time to test it out. In the <code>head</code> section, find these two lines:</p>
+        <p><code>&lt;!-- REACTIVATE WHEN READY: script defer src="libbable.js"&gt;&lt;/script --&gt;<br />
+        &lt;!-- REACTIVATE WHEN READY: script defer src="index.js"&gt;&lt;/script --&gt;</code></p>
+        <p>Edit them so they look like this:</p>
+        <p><code>&lt;script defer src="libbable.js"&gt;&lt;/script&gt;<br />
+        &lt;script defer src="index.js"&gt;&lt;/script&gt;</code></p>
+        <p>While you're at it, also edit the <code>meta</code> tags to include a short de&shy;scrip&shy;tion of your story, and your name in the author field.</p>
+        <p>Also be sure the <code>div</code> has <code>id="libbable"</code>, not <code>id="libbableDraft"</code>. This actually <em>hides</em> the story, but it also enables the script to create the form with the appropriate fields to correspond to the blanks.</p>
+        <p>In the following example, the fields are read-only. Go to one of the samples linked above to see a form that you can fill in the fields of.</p>
+        <div>
+            <div class="labelInputGroup">
+                <span class="label">first name</span>
+                <input value="Jenny" readonly />
+            </div>
+            <div class="labelInputGroup">
+                <span class="label">animal species, cap&shy;i&shy;tal&shy;ized</span>
+                <input value="Jaguar" readonly />
+            </div>
+            <div class="labelInputGroup">
+                <span class="label">street</span>
+                <input value="Woodward Avenue" readonly />
+            </div>
+            <div class="labelInputGroup">
+                <span class="label">activity, gerund</span>
+                <input value="eating tomatoes" readonly />
+            </div>
+        </div>
+        <p>Once all the fields are filled in, the button to transcribe the fields into the story should become enabled. Click it and the story should ap&shy;pear with the blanks filled in. For example:</p>
+        <div id="libbableShow" style="margin-bottom: 0">
+            <p>Little <ruby>Jenny<rt>first name</rt></ruby> the <ruby>Jaguar<rt>animal species, cap&shy;i&shy;tal&shy;ized</rt></ruby> was walking down <ruby>Woodward Avenue<rt>street</rt></ruby>. Little <ruby>Jenny</ruby> the <ruby>Jaguar</ruby> enjoyed <ruby>eating tomatoes<rt>activity, gerund</rt></ruby> from time to time.</p>
+        </div>
+        <p>If you really like how a filled-in story turns out, you can print it out. I have provided a style sheet for the purpose.</p>
+        <h2>Authorship</h2>
+        <p>Any Wacky Fill-Ins stories with blanks that you create are of course your own work of authorship.</p>
+        <p>I created this implementation, including the first draft of the Ja&shy;va&shy;Script. Cole Cooper Wyman rewrote the JavaScript for elegance, ef&shy;fi&shy;cien&shy;cy and to comply with modern JavaScript best practices.</p>
+        <p>I also wrote the three samples, as well as the template. However, the template has a placeholder for the author's name in the metadata.</p>
+        <hr />
+        <p>&copy; 2019 Alonso del Arte</p>
     </body>
 </html>

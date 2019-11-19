@@ -1,1 +1,1 @@
-const libbable = new Libbable( document )
+const libbable = new Libbable(document)
