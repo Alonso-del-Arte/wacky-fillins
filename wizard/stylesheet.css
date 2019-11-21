@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: "Roboto";
+}
+
+body { margin: 0 }
+
+h2 {
+  font-size: 1.25rem;
+  color: rgba( 22, 22, 22, 0.5 );
+  margin: 5px;
+}
+
+input, textarea {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+button {
+  background: none;
+  outline: none;
+  border: none;
+
+  font-size: 1rem;
+}
+
+
+#container {
+  background-color: #fff;
+  padding: 15px;
+  height: 100vh;
+
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax( 300px, 2fr ) minmax( 100px, 1fr );
+  grid-template-areas:
+    "storycard"
+    "wordbank";
+
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+#storycard {
+  grid-area: storycard;
+  height: 100%;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#wordbank {
+  grid-area: wordbank;
+  height: 100%;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#wordbank-submit {
+}
+
+#variables {
+  display: flex;
+  flex-flow: row wrap;
+
+  width: 100%;
+
+  overflow-x: scroll;
+}
+
+#variables > * {
+  margin: 5px;
+}
+
+.card {
+  background-color: #FAFAFA;
+  box-shadow: 2px 2px 10px rgba( 0, 0, 0, 0.3 );
+  border-radius: 3px;
+  padding: 15px;
+}
+
+.chip {
+  color: #FAFAFA;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-radius: 15px;
+}
+
+.danger {
+  background-color: #FF4A25;
+}
+
+.info {
+  background-color: #3AD4FF;
+}
+
+.success {
+  background-color: #23E200
+}
+
+.gray {
+  background-color: #F0F0F0;
+}
+
+.darker-text {
+  color: rgba( 0, 0, 0, 0.5 );
+}
+
+.light-text {
+  color: #fafafa;
+}
+
+
+form[name=story] {
+  height: calc( 100% - 50px );
+}
+
+[name=title] {
+  width: 100%;
+  font-size: 2rem;
+  color: rgba( 22, 22, 22, 0.8 );
+}
+
+[name=title]:focus {
+  outline: none;
+}
+
+[name=content] {
+  margin-top: 15px;
+  width: 100%;
+  font-size: 1.25rem;
+  height: 100%;
+  resize: none;
+}
