@@ -27,8 +27,10 @@
         <h2>How to Write Your Own Wacky Fill-Ins</h2>
         <p>You don't have to know JavaScript to write your own Wacky Fill-Ins, but it really helps to know HTML, and, to a lesser extent, CSS. You can use the <a href="template.html">provided template</a> to get started.</p>
         <p>My friend Cole suggested a creation wizard that would enable some&shy;one to write a Wacky Fill-In story without needing to know any HTML markup at all. One would only need a rudimentary and self-ex&shy;plan&shy;a&shy;to&shy;ry markdown.</p>
+        <p>Cole did a lot of the heavy lifting for the <a href="wizard/index.html" target="_blank">wizard</a>. Now I just need to sit down and wire a couple of things to make it work. Should be easy but not trivial.</p>
+        <p>So, for the time being, the best way to make a Wacky Fill-In story is to duplicate the HTML template and edit it in your favorite plain text editor.</p>
         <p>The story goes inside a <code>div</code> tag with <code>id="libbable"</code>. However, you might find it helpful to use <code>id="libbableDraft"</code> when you're drafting your story. Inside the <code>div</code>, you will use <code>p</code> tags to make paragraphs.</p>
-        <p>To indicate a blank that needs to be filled in, use a <code>span</code> tag with <code>class="fillable"</code>. Be sure to also give the <code>span</code> an <code>id</code> if you want to reuse the fill-in later in the story. In between the opening and closing of the <code>span</code> tag, write the de&shy;scrip&shy;tion of what needs to be filled in, e.g., "verb", "communications device".</p>
+        <p>To indicate a blank that needs to be filled in, use a <code>span</code> tag with <code>class="fillable"</code>. Be sure to also give the <code>span</code> an <code>id</code> if you want to reuse the fill-in later in the story. In between the opening and closing of the <code>span</code> tag, write the de&shy;scrip&shy;tion of what needs to be filled in, e.g., "verb", "communications device", "dog breed".</p>
         <p>To repeat a previous fill-in, use a <code>span</code> tag with <code>class="repeatFill"</code>. Write the <code>id</code> of the field you want to repeat in between the opening and closing for the <code>span</code> tag that is to have the repeated fill-in. For example:</p>
         <p><code>&lt;p&gt;Little &lt;span id="firstName" class="fillable"&gt;first name&lt;/span&gt; the &lt;span id="animalSpecies" class="fillable"&gt;animal species, cap&shy;i&shy;tal&shy;ized&lt;/span&gt; was walking down &lt;span class="fillable"&gt;street&lt;/span&gt;. Little &lt;span class="repeatFill"&gt;firstName&lt;/span&gt; the &lt;span class="repeatFill"&gt;animalSpecies&lt;/span&gt; enjoyed &lt;span class="fillable"&gt;activity, gerund&lt;/span&gt; from time to time.&lt;/p&gt;</code></p>
         <p>If you preview that in your Web browser (with the <code>libbableDraft</code> styles), it should look something like this:</p>
@@ -69,8 +71,9 @@
         <p>If you really like how a filled-in story turns out, you can print it out. I have provided a style sheet for the purpose.</p>
         <h2>Authorship</h2>
         <p>Any Wacky Fill-Ins stories with blanks that you create are of course your own work of authorship.</p>
+        <p>The authorship of a filled-in story that was filled in by a group of people, well, I suppose that's group authorship, but I doubt anyone would care too much about it.</p>
         <p>I created this implementation, including the first draft of the Ja&shy;va&shy;Script. Cole Cooper Wyman rewrote the JavaScript for elegance, ef&shy;fi&shy;cien&shy;cy and to comply with modern JavaScript best practices.</p>
-        <p>I also wrote the three samples, as well as the template. However, the template has a placeholder for the author's name in the metadata.</p>
+        <p>I also wrote the three samples, as well as the HTML template. However, the template has a placeholder for the author's name in the metadata.</p>
         <hr />
         <p>&copy; 2019 Alonso del Arte</p>
     </body>
