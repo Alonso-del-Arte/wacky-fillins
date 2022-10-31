@@ -10,4 +10,4 @@ This game would be played with pen and paper, it still often is today. The Mad L
 
 With computers, it is possible to do several Wacky Fill-Ins with zero paper waste. You can also reuse a particular story and fill it in differently. And if you do like a story enough to want it on paper, you can print it out.
 
-For this project, I also want to enable users to write their own Wacky Fill-In stories. See `index.html` for details.
+For this project, I also want to enable users to write their own Wacky Fill-In stories. See [`index.html`](index.html) for details.

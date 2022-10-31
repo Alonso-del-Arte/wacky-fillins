@@ -14,7 +14,6 @@ class Libbable {
     this.fields = this.createFields()
   }
 
-
   getElementsByClassName(className) {
     const elementHTMLList = this.document.getElementsByClassName( className );
     const elements = [];
@@ -40,20 +39,16 @@ class Libbable {
       form.appendChild(labelInputGroup);
       fields.push(input)
     }
-
     const submitButton = this.document.createElement("button");
     submitButton.innerHTML = "Transcribe fill-ins and present text";
     submitButton.type = "submit";
     submitButton.disabled = true;
-    
     form.appendChild(submitButton);
     this.document.body.appendChild(form);
-
     form.addEventListener(
       "change",  () => {
         submitButton.disabled = this.shouldFormBeDisabled()
       })
-
     form.addEventListener(
       "submit", (event) => {
         event.preventDefault()
